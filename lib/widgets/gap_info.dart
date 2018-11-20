@@ -4,7 +4,7 @@ import 'package:village/utils/time.dart';
 class GapInfo extends StatelessWidget {
   final Duration gap;
 
-  const GapInfo({Key key, this.gap}) : super(key: key);
+  const GapInfo({Key key, @required this.gap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

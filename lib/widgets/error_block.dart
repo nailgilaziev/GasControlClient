@@ -11,9 +11,12 @@ class ErrorBlock extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(msg,
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.deepOrange)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+          child: Text(msg,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.deepOrange)),
+        ),
         RefreshButton()
       ],
     );

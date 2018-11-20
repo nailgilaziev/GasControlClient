@@ -1,4 +1,3 @@
-const BUG_FIX_OFFSET = 500;
 
 class Measurement {
   int position;
@@ -15,6 +14,14 @@ class Measurement {
     inTemp = int.parse(j['field2']);
     roomTemp = int.parse(j['field3']);
     roomHumidity = int.parse(j['field4']);
-    position = int.parse(j['field5']) - BUG_FIX_OFFSET;
+    position = int.parse(j['field5']);
+
+    // FIXME TMP FIX THINGSPEAK DATA BUG https://github.com/nailgilaziev/GasControl/issues/6
+    if (position > 500) {
+      position -= 500;
+    }
+    if (position > 50) {
+      position -= 50;
+    }
   }
 }
